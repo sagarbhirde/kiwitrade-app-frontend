@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import BrowseByCategory from '@components/BrowseByCategory'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
       <h1>This is the main dashboard page.</h1>
+      <BrowseByCategory/>
     </>
   )
 }
