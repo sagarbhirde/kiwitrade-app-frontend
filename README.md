@@ -31,6 +31,9 @@ KiwiTrade is the premium online classifieds platform for New Zealand. Buy, Sell,
 # Clone the repository
 git clone https://github.com/sagarbhirde/kiwitrade-app-frontend.git
 
+# If yarn is not installed then enter following command
+npm install -g yarn
+
 # Install dependencies
 yarn install
 
