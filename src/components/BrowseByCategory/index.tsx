@@ -1,5 +1,5 @@
 import React from "react";
-import realEstate from "./../../../assets/images/realestate.jpg";
+import realEstate from "@images/realestate.jpg";
 import './BrowseByCategory.css'
 
 interface CategoryCardProps {
