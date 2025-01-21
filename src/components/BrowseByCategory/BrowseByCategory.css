@@ -1,11 +1,21 @@
-.browse-by-category {
+/* .browse-by-category {
     text-align: left;
     margin: 20px;
   }
+  .browse-by-category h2{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .browse-by-category p{
+    margin-bottom: 30px;
+    color: dimgray;
+  }
   .browse-by-category span {
     font-style: italic;
+    color: dimgray;
   }
-  
+
   .categories-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -26,7 +36,7 @@
   }
   
   .category-card .overlay {
-    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(0, 0, 0, 0.5);
   
     color: rgb(10, 10, 10);
     text-align: center;
@@ -44,5 +54,14 @@
     width: 258px;
     background-color: white;
     border-radius: 5px;
+    margin-top: 190px;
+    
+  }
+  .bg  h3{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 14px;
+
   }
   
+   */
