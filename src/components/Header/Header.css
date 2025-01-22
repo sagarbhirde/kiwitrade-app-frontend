@@ -1,4 +1,4 @@
-/* General Header Styles
+/*  
 .header {
     font-family: "Arial", sans-serif;
     background-color: #fff;
@@ -14,7 +14,7 @@
     display: contents;
   }
   
-  Top Section (Contact Info and Actions)
+  
   .header-top {
     display: flex;
     justify-content: space-between;
@@ -52,7 +52,7 @@
     color: white;
   }
   
-  Bottom Section (Logo, Stats, Search, Account)
+  
   .header-bottom {
     display: flex;
     align-items: center;
@@ -118,9 +118,9 @@
     align-items: center;
     margin-left: 400px;
     border: 1px solid #ccc;
-    /* border-radius: 20px; */
-    /* overflow: hidden;
-  }
+    /* border-radius: 20px;
+     overflow: hidden; */
+  /* }
   
   .search-input {
     border: none;
@@ -168,7 +168,7 @@
     border: 1px solid black;
   }
   
-  Responsive Design
+  
   @media (max-width: 768px) {
     .header-container {
       padding: 0 10px;
@@ -182,5 +182,5 @@
     .search-input {
       width: 100%;
     }
-  }
-   */ 
+  } */
+    
