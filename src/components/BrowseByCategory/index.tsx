@@ -1,5 +1,29 @@
 import React from "react";
+import realEstate from "@images/realestate.jpg";
+import './BrowseByCategory.css'
 import { FaBuilding, FaCar, FaIndustry, FaUtensils, FaShoppingCart, FaUsers } from "react-icons/fa";
+
+interface CategoryCardProps {
+  title: string;
+  adsCount: number;
+  imageUrl: string;
+}
+
+const CategoryCard: React.FC<CategoryCardProps> = ({ title, imageUrl }) => {
+  return (
+    <div
+      className="category-card"
+      style={{ backgroundImage: `url(${imageUrl})` }}
+    >
+      <div className="overlay">
+        <div className="bg">
+          <h3>{title}</h3>
+          {/* <p>{adsCount} </p> */}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const categories = [
   {
@@ -65,7 +89,7 @@ const BrowseByCategory: React.FC = () => {
             <img
               src={category.imageUrl}
               alt={category.title}
-              className="hidden lg:block absolute inset-0 w-full h-full object-cover"
+              className="hidden md:block absolute inset-0 w-full h-full object-cover"
             />
             <div className="flex items-center justify-center h-full text-teal-500 text-5xl lg:hidden">
               {category.icon} 
