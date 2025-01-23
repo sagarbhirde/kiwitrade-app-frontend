@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 const ads = [
   {
     id: 1,
@@ -49,50 +50,57 @@ const ads = [
     category: "DIGITAL ART",
   },
 ];
+
 const FeaturedAds = () => {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
-  const handleCategoryClick = (category: string) => {
+
+  const handleCategoryClick = (category: React.SetStateAction<string>) => {
     setSelectedCategory(category);
   };
+
   const filteredAds =
     selectedCategory === "ALL"
       ? ads
       : ads.filter((ad) => ad.category === selectedCategory);
+
   return (
-    <section className="mx-auto p-6 max-w-6xl">
-      <h2 className="text-3xl font-bold">
-        Featured Ads{" "}
-        <span className="italic text-gray-500 font-normal font-playfair ">for you...</span>
+    <section className="me-auto p-6 max-w-6xl">
+      <h2 className="text-3xl font-bold text-left">
+        Featured Ads
+        <span className="italic text-gray-500 font-normal font-playfair"> for you...</span>
       </h2>
-      <p className="text-gray-600 mt-2">
+      <p className="text-gray-600 mt-2 text-left">
         Feel free to adapt this based on the specific managed services, features.
       </p>
-      <div className="space-x-10 mt-4">
-        {["ALL", "ANTIQUES", "AUTOMOTIVE", "COMICS", "DIGITAL ART"].map(
-          (category) => (
-            <button
-              key={category}
-              className={`text-gray-500 hover:text-green-500 ${
-                selectedCategory === category
-                  ? "text-green-500 font-semibold"
-                  : ""
-              }focus:bg-gray-100 focus:outline-none focus:ring-0 border-none`}
-              onClick={() => handleCategoryClick(category)}
-            >
-              {category}
-            </button>
-          )
-        )}
+      <div className="space-x-24 mt-4 flex">
+        {[
+          "ALL",
+          "ANTIQUES",
+          "AUTOMOTIVE",
+          "COMICS",
+          "DIGITAL ART",
+        ].map((category) => (
+          <button
+            key={category}
+            className={`px-4 py-2 text-gray-500 hover:text-green-500 transition-colors duration-200 rounded-md border ${
+              selectedCategory === category
+                ? "font-semibold text-green-500 border-green-500"
+                : "border-gray-300"
+            }focus:bg-gray-100 focus:outline-none focus:ring-0 border-none`}
+            onClick={() => handleCategoryClick(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
-      <hr className="my-5 border-gray-400" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-6 mt-6">
+      <hr className="mt-6 mb-6 border-gray-400" />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-6 mt-6 sm:grid-cols-2 lg:grid-cols-2 sm:p-8">
         {filteredAds.map((ad) => (
           <div
             key={ad.id}
-            className="flex flex-row items-center bg-white overflow-hidden border"
+            className="flex flex-col bg-white overflow-hidden border rounded-lg shadow-sm sm:flex-row"
           >
-            {/* Image Section */}
-            <div className="w-96 h-64 relative">
+            <div className="w-full h-48 sm:h-64 relative">
               <img
                 src={ad.imageUrl}
                 alt={ad.title}
@@ -102,9 +110,8 @@ const FeaturedAds = () => {
                 Upcoming
               </span>
             </div>
-            {/* Text Section */}
-            <div className="w-2/3 p-4">
-              <h3 className="text-lg font-semibold mt-0 mb-4">{ad.title}</h3>
+            <div className="w-full p-4 sm:w-2/3 text-left">
+              <h3 className="text-lg font-semibold mt-0 mb-2">{ad.title}</h3>
               <p className="text-sm text-gray-500">Starting bid:</p>
               <p className="text-lg font-bold mb-3">{ad.bid}</p>
               <button className="mt-4 bg-black text-white px-8 py-1 rounded">
@@ -117,4 +124,5 @@ const FeaturedAds = () => {
     </section>
   );
 };
+
 export default FeaturedAds;
