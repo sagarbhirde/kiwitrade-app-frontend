@@ -14,6 +14,13 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    proxy: {
+      '/api': {
+        target: 'https://api.ekiwitrade.com',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
   preview: {
     port: 3000,
